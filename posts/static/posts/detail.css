@@ -1,0 +1,38 @@
+/* Estilos CSS simplificados */
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 800px;
+  display: flex;
+  margin-top: 20px;
+}
+
+.content {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+img {
+  width: 50%;
+  height: 50%;
+}
+
+.return{
+  margin-left: 20%;
+}
+
+.edit{
+  margin-bottom: 3rem;
+}

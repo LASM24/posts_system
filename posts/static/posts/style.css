@@ -3,7 +3,6 @@
     display: flex;
     width: 100%;
     flex-direction: column;
-    align-content: space-around;
     align-items: center;
 }
 
@@ -14,40 +13,44 @@
 }
 
 .post-content {
+    display: flex;
     width: 80%;
-    margin: 0 auto;
-    text-align: center;
+    margin: auto;
+    padding: 0.5rem;
 }
 
-.post-content img {
+.post-image {
+    flex: 0 0 auto; /* Esto hace que el ancho no se ajuste */
+    margin-right: 2.1rem; /* Espacio entre la imagen y el texto */
+}
+
+.post-image img {
     max-width: 100%;
-    height: auto;
-    margin-top: 20px;
     border-radius: 10px;
+    width: 5rem;
+    height: 5rem;
+    margin-top: 0.5rem;
 }
 
-.post-content h2 {
+.post-details {
+    flex: 1; /* Esto hace que el contenido tome el espacio restante */
+}
+
+.post-details h2 {
     margin: 0;
     font-size: 24px;
     line-height: 1.5;
 }
 
-.post-content h3 {
-    margin-top: 10px;
-    font-size: 20px;
-    color: #6c757d;
-}
-
-.post-content p {
-    margin-bottom: 20px;
+.post-details p {
     font-size: 16px;
 }
 
-.post-content a {
+.post-details a {
     text-decoration: none;
     color: #007bff;
 }
 
-.post-content a:hover {
+.post-details a:hover {
     text-decoration: underline;
 }

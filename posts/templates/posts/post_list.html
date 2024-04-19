@@ -9,16 +9,19 @@
 		{% for post in object_list %}
 			<section class="post-section">
 				<div class="post-content">
-					<img src="{{ post.image.url }}" width="100rem" heignt="100rem">
-					<h2>{{ post.title }}</h2>
-					<p>{{ post.content|striptags|safe|truncatechars:"200" }}</p>
-					<p><a href="{% url 'posts:posts' %}">Leer más</a>
+					<div class="post-image">
+						<img src="{{ post.image.url }}">
+					</div>
+					<div class="post-details">
+						<h2>{{ post.title }}</h2>
+						<p>{{ post.content|striptags|safe|truncatechars:"200" }}</p>
+						<p><a href="{% url 'posts:post' post.id post.title|slugify %}">Leer más</a></p>
+					</div>
+				</div>				
 					{% comment %} {% if request.user.is_staff %}
 						| <a href="{% url "pages:update" post.id %}">Editar</a>
 						| <a href="{% url "pages:delete" post.id %}">Borrar</a>
 					{% endif %} {% endcomment %}
-					</p>
-				</div>
 			</section>
 		{% endfor %}
 	</div>
