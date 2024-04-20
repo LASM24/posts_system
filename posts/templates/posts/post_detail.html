@@ -4,21 +4,19 @@
 {% block title %} {{ post.title }}{% endblock title %} {{ post.title }}
 
 {% block content %}
-<p class="return"><a href="{% url "posts:posts"%}">←</a></p>
-<link rel="stylesheet" href="{% static "posts/detail.css" %}">
-<main class="main">
-  <div class="container">
-    <div class="content">
-      <h2>{{post.title}}</h2>
-        <p class="text">{{post.content|safe|linebreaksbr}}</p>
-      <img src="{{ post.image.url }}">
-      {% if request.user.is_staff %}
-        <p class="edit"><a href="{% url "posts:post" post.id post.title|slugify %}">Editar</a></p>
-      {% endif %}
+  {% include "posts/includes/page_menu.html" %}
+  <link rel="stylesheet" href="{% static "posts/detail.css" %}">
+  <main class="main">
+    <div class="container">
+      <div class="content">
+        <h2>{{post.title}}</h2>
+          <p class="text">{{post.content|safe|linebreaksbr}}</p>
+        <img src="{{ post.image.url }}">
+        {% if request.user.is_staff %}
+          <p class="edit"><a href="{% url "posts:post" post.id post.title|slugify %}">Editar</a></p>
+        {% endif %}
+      </div>
     </div>
-  </div>
-</main>
-
-  
+  </main>
 {% endblock content %}
 

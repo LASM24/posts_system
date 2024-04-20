@@ -1,0 +1,36 @@
+
+.my-navbar {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    padding-bottom: 1rem;
+}
+
+.my-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.my-navbar-brand {
+    font-weight: bold;
+    margin-right: auto;
+}
+
+.my-navbar-nav {
+    list-style: none;
+}
+
+.my-nav-item {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.my-nav-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.my-nav-link:hover {
+    color: #0056b3;
+}
