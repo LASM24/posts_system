@@ -1,0 +1,16 @@
+{% load static %}
+
+{% if request.user.is_staff %}
+<link rel="stylesheet" href="{% static "posts/page.css" %}">
+<nav class="my-navbar">
+    <div class="my-container">
+        <span class="my-navbar-brand"><i>Administrar</i></span>
+        <ul class="my-navbar-nav">
+            <li class="my-nav-item"><a class="my-nav-link" href="#">Crear página</a></li>
+            <li class="my-nav-item"><a class="my-nav-link" href="{% url "posts:posts" %}">
+                Listado de páginas
+            </a></li>
+        </ul>
+    </div>
+</nav>
+{% endif %}
