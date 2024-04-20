@@ -20,8 +20,8 @@
 }
 
 .post-image {
-    flex: 0 0 auto; /* Esto hace que el ancho no se ajuste */
-    margin-right: 2.1rem; /* Espacio entre la imagen y el texto */
+    flex: 0 0 auto;
+    margin-right: 2.1rem;
 }
 
 .post-image img {
@@ -33,7 +33,7 @@
 }
 
 .post-details {
-    flex: 1; /* Esto hace que el contenido tome el espacio restante */
+  flex: 1;
 }
 
 .post-details h2 {

@@ -20,8 +20,8 @@
 					</div>
 				</div>				
 					{% comment %} {% if request.user.is_staff %}
-						| <a href="{% url "pages:update" post.id %}">Editar</a>
-						| <a href="{% url "pages:delete" post.id %}">Borrar</a>
+						| <a href="{% url "posts:update" post.id %}">Editar</a>
+						| <a href="{% url "posts:delete" post.id %}">Borrar</a>
 					{% endif %} {% endcomment %}
 			</section>
 		{% endfor %}
