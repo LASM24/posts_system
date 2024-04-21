@@ -1,3 +1,5 @@
 __pycache__
 ps
 db.sqlite3
+migrations
+media
