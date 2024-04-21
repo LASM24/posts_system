@@ -14,7 +14,7 @@
 
 .my-navbar-brand {
     font-weight: bold;
-    margin-right: auto;
+    margin-right: 4rem;
 }
 
 .my-navbar-nav {
@@ -23,7 +23,6 @@
 
 .my-nav-item {
     display: inline-block;
-    margin-left: 20px;
 }
 
 .my-nav-link {
@@ -33,4 +32,15 @@
 
 .my-nav-link:hover {
     color: #0056b3;
+}
+
+
+@media only screen and (max-width: 390px){
+    .my-container{
+        max-width: 90%;
+    }
+
+    .nav1{
+        padding-bottom: 1rem;
+    }
 }

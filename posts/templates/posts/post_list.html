@@ -15,7 +15,7 @@
 					</div>
 					<div class="post-details">
 						<h2>{{ post.title }}</h2>
-						<p>{{ post.content|striptags|safe|truncatechars:"200" }}</p>
+						<p>{{ post.content|striptags|safe|truncatechars:"100" }}</p>
 						<p><a href="{% url 'posts:post' post.id post.title|slugify %}">Leer más</a></p>
 					</div>
 				</div>				
