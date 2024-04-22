@@ -26,7 +26,6 @@
 														Leer más
 													</a></button>
 													{% if request.user.is_staff %}
-																{% comment %} <button href="{% url "posts:posts"%}">Editar</button>	 {% endcomment %}
 																<button><a href="{% url "posts:delete" post.id %}">
 																	Borrar
 																</a></button>
