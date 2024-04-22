@@ -12,9 +12,6 @@
         <h2>{{post.title}}</h2>
           <p class="text">{{post.content|safe|linebreaksbr}}</p>
         <img src="{{ post.image.url }}">
-        {% if request.user.is_staff %}
-          <p class="edit"><a href="{% url "posts:post" post.id post.title|slugify %}">Editar</a></p>
-        {% endif %}
       </div>
     </div>
   </main>
