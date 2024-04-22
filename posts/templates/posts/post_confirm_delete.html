@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+{% block title %}Borrar post{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "posts/confirm.css" %}">
+<main class="confirmation-main">
+  <div class="confirmation-container">
+    <div class="confirmation-content">
+      <form action="" method="post">
+        {% csrf_token %}
+        <p>¿Estás seguro de que quieres borrar "{{ object }}"?</p>
+        <input type="submit" value="Sí, borrar el post" />
+      </form>
+    </div>
+  </div>
+</main>
+
+{% endblock %}

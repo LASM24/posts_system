@@ -2,7 +2,7 @@
 from django.urls import reverse_lazy
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 from .models import Post
 from .forms import PostCreateForm
 
@@ -20,3 +20,10 @@ class PostCreateView(CreateView):
     model = Post
     form_class = PostCreateForm
     success_url = reverse_lazy('posts:posts')
+
+
+class PostDeleteView(DeleteView):
+    model = Post
+
+    def get_success_url(self):
+            return reverse_lazy('posts:posts') + '?ok' 

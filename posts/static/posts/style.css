@@ -1,11 +1,9 @@
-
 .content_max {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 20px;
 }
-
 
 .post-section {
     background-color: rgb(149, 195, 195);
@@ -55,6 +53,28 @@
     text-decoration: underline;
 }
 
+.admin-options {
+    display: flex;
+    justify-content: center;
+}
+
+.admin-options a{
+    color: #fff;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 1rem;
+    background-color: #729cca;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.msj{
+    margin-top: 1rem;
+    text-align: center;
+}
 
 @media only screen and (max-width: 768px) {
     .post-section {
