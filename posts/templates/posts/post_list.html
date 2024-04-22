@@ -21,15 +21,16 @@
                     <div class="post-details">
                         <h2>{{ post.title }}</h2>
                         <p>{{ post.content|striptags|safe|truncatechars:"100" }}</p>
-                        {% if request.user.is_staff %}
-												<div class="admin-options">
-															<button><a href="{% url 'posts:post' post.id post.title|slugify %}">Leer más</a></button>
-                                {% comment %} <a href="{% url "posts:update" post.id %}">Editar</a> {% endcomment %}
-															<button>
-																<a href="{% url "posts:delete" post.id %}">Borrar</a>
-															</button>
-                            </div>
-                        {% endif %}
+												<div class="btns">
+													<button><a href="{% url 'posts:post' post.id post.title|slugify %}">
+														Leer más
+													</a></button>
+													{% if request.user.is_staff %}
+																<button><a href="{% url "posts:delete" post.id %}">
+																	Borrar
+																</a></button>
+													{% endif %}
+												</div>
                     </div>
                 </div>              
             </section>

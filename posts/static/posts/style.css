@@ -42,33 +42,29 @@
 
 .post-details p {
     font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
-.post-details a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-.post-details a:hover {
-    text-decoration: underline;
-}
-
-.admin-options {
-    display: flex;
-    justify-content: center;
-}
-
-.admin-options a{
-    color: #fff;
+.post-details button{
+    color: #ffffff;
 }
 
 button {
     padding: 10px 20px;
-    margin-right: 1rem;
     background-color: #729cca;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.btns{
+    display: flex;
+    justify-content: space-around;
+}
+
+button a {
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .msj{
