@@ -59,12 +59,22 @@ button {
 
 .btns{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 button a {
     text-decoration: none;
-    color: #ffffff;
+    color: #000;
+    padding: 10px;
+}
+
+.btn-a {
+    background-color: #7dcc73;
+    margin-left: 1rem;
+}
+
+.btn-a a {
+    color: #000;
 }
 
 .msj{
@@ -84,5 +94,14 @@ button a {
     .post-image {
         margin-right: 0;
         margin-bottom: 10px;
+    }
+
+    .btns{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .btn-a {
+        margin-left: 0;
     }
 }

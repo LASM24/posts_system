@@ -19,7 +19,9 @@ class PostDetailView(DetailView):
 class PostCreateView(CreateView):
     model = Post
     form_class = PostCreateForm
-    success_url = reverse_lazy('posts:posts')
+
+    def get_success_url(self):
+            return reverse_lazy('posts:posts') + '?os' 
 
 
 class PostDeleteView(DeleteView):

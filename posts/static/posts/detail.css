@@ -30,7 +30,18 @@ img {
 }
 
 .return{
-  margin-left: 20%;
+  margin-left: 25%;
+  padding: 10px 20px;
+  background-color: #729cca;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.return a{
+  text-decoration: none;
+  padding: 10px;
+  color: #000;
 }
 
 .edit{
@@ -41,5 +52,9 @@ img {
   .content {
     max-width: 90%;
     margin-left: 5%;
+  }
+
+  .return{
+    margin-left: 20%;
   }
 }
