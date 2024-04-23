@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="{% static "posts/style.css" %}">
     {% if 'ok' in request.GET %}
     <p class="msj" style="color:green">
-      Pagina eliminada correctamente
+      Posts eliminado correctamente
     </p>
+    {% elif 'os' in request.GET %}
+    <p class="msj" style="color:green">
+        Posts creado correctamente
+      </p>
     {% endif %}
     <div class="content_max">
         {% for post in object_list %}
@@ -26,7 +30,8 @@
 														Leer más
 													</a></button>
 													{% if request.user.is_staff %}
-																<button><a href="{% url "posts:delete" post.id %}">
+																{% comment %} <button class="btn-a"><a href="{% url "posts:posts"%}">Editar</a></button> {% endcomment %}
+																<button class="btn-a"><a href="{% url "posts:delete" post.id %}">
 																	Borrar
 																</a></button>
 													{% endif %}

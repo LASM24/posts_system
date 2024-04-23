@@ -6,6 +6,7 @@
 {% block content %}
   {% include "posts/includes/post_menu.html" %}
   <link rel="stylesheet" href="{% static "posts/detail.css" %}">
+  <button class="return"><a href="{% url "posts:posts" %}">volver</a></button>
   <main class="main">
     <div class="container">
       <div class="content">
