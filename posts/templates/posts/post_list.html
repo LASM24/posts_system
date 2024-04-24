@@ -4,41 +4,37 @@
 {% block title %} Posts{% endblock title %}
 
 {% block content %}
-    {% include "posts/includes/post_menu.html" %}
-    <link rel="stylesheet" href="{% static "posts/style.css" %}">
-    {% if 'ok' in request.GET %}
-    <p class="msj" style="color:green">
-      Posts eliminado correctamente
+	{% include "posts/includes/post_menu.html" %}
+	<link rel="stylesheet" href="{% static "posts/style.css" %}">
+	{% if 'ok' in request.GET %}
+		<p class="msj" style="color:green">
+			Posts eliminado correctamente
+		</p>
+	{% elif 'os' in request.GET %}
+	<p class="msj" style="color:green">
+    Posts creado correctamente
     </p>
-    {% elif 'os' in request.GET %}
-    <p class="msj" style="color:green">
-        Posts creado correctamente
-      </p>
-    {% endif %}
-    <div class="content_max">
-        {% for post in object_list %}
-            <section class="post-section">
-                <div class="post-content">
-                    <div class="post-image">
-                        <img src="{{ post.image.url }}">
-                    </div>
-                    <div class="post-details">
-                        <h2>{{ post.title }}</h2>
-                        <p>{{ post.content|striptags|safe|truncatechars:"100" }}</p>
-												<div class="btns">
-													<button><a href="{% url 'posts:post' post.id post.title|slugify %}">
-														Leer más
-													</a></button>
-													{% if request.user.is_staff %}
-																{% comment %} <button class="btn-a"><a href="{% url "posts:posts"%}">Editar</a></button> {% endcomment %}
-																<button class="btn-a"><a href="{% url "posts:delete" post.id %}">
-																	Borrar
-																</a></button>
-													{% endif %}
-												</div>
-                    </div>
-                </div>              
-            </section>
-        {% endfor %}
-    </div>
+	{% endif %}
+	<div class="content_max">
+		{% for post in object_list %}
+			<section class="post-section">
+				<div class="post-content">
+					<div class="post-image">
+						<img src="{{ post.image.url }}">
+					</div>
+				</div>
+				<div class="post-details">
+					<h2>{{ post.title }}</h2>
+					<p>{{ post.content|striptags|safe|truncatechars:"100" }}</p>
+				</div>
+				<div class="btns">
+					<button><a href="{% url 'posts:post' post.id post.title|slugify %}">Leer más</a></button>
+					{% if request.user.is_staff %}
+						<button class="btn-a"><a href="{% url "posts:update" post.id %}">Editar</a></button>
+						<button class="btn-a"><a href="{% url "posts:delete" post.id %}">Borrar</a></button>
+					{% endif %}
+				</div>            
+			</section>
+		{% endfor %}
+	</div>
 {% endblock content %}
