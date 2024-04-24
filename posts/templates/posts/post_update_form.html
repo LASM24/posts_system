@@ -1,0 +1,36 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}Actualizar post{% endblock %}
+
+{% block content %}
+{% include 'posts/includes/post_menu.html'%}
+<link rel="stylesheet" href="{% static "posts/forms.css" %}"> 
+<main class="main">
+	<div class="form-container">
+	  {% if 'or' in request.GET %}
+			  <p style="color:green;  margin-bottom:2rem;">
+					  Post editado correctamente
+					  <a href="{% url "posts:posts" %}">Click aqui para ver el resultado</a>
+				  </p>
+		  {% endif %}
+		<form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+			<div class="form-group">
+				<label for="id_title">Título:</label>
+				{{ form.title }}
+		</div>
+		<div class="form-group">
+				<label for="id_content">Contenido:</label>
+				{{ form.content }}
+		</div>
+		<div class="form-group">
+				<label for="id_image">Imagen:</label>
+				{{ form.image }}
+		</div>
+		<br />
+			<br>
+			<input class="form-submit" type="submit" value="Actualizar post" />
+	</form>
+</div>
+</main>
+{% endblock %}
