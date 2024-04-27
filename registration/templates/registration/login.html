@@ -1,0 +1,19 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Iniciar sesión{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="{% static "registration/login.css" %}">
+<main>
+    <div class="content">
+      <form action="" method="post">{% csrf_token %}
+        <h3>Iniciar sesión</h3>
+        {% if form.non_field_errors %}
+          <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
+        {% endif %}
+        <input type="text" name="username" autofocus maxlength="254" required placeholder="Nombre de usuario"/>
+        <input type="password" name="password" required placeholder="Contraseña"/>
+        <input type="submit" value="Acceder">
+      </form>
+    </div>
+</main>
+{% endblock %}
