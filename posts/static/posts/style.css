@@ -82,6 +82,16 @@ button a {
     text-align: center;
 }
 
+.a-link-login{
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-left: 1rem;
+    text-decoration: none;
+    margin-left: 1rem;
+    padding: 0;
+}
+
 @media only screen and (max-width: 768px) {
     .post-section {
         width: 90%;
@@ -103,5 +113,18 @@ button a {
 
     .btn-a {
         margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .btns{
+        display: flex;
+        align-items: center;
+    }
+
+    .btns > button{
+        margin-top: 0.5rem;
+        margin-right: 3px;
+        padding: 10px 1rem;
     }
 }

@@ -13,9 +13,14 @@
         <nav>
             <a href="{% url "home" %}">Home</a>
             <a href="{% url "posts:posts" %}">Posts</a>
-            <a class="nav-link" href="/admin/">
-                {% if request.user.is_staff %}Admin{% else %}Acceder{% endif %}
-            </a>
+            {% if not request.user.is_authenticated %}
+              <a class="a-link-login" href="{% url "login" %}">Acceder</a>
+            {% else %}
+              <form action="{% url 'logout' %}" method="post">
+                  {% csrf_token %}
+                  <button type="submit" class="a-link-login">Salir</button>
+              </form>
+            {% endif %}
         </nav>
     </header>
     {% block content %}{% endblock content %}
