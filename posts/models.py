@@ -1,7 +1,8 @@
 from django.db import models
+from django.db.models.signals import post_delete
+from django.dispatch import receiver
+import os
 
-
-# Create your models here.
 class Post(models.Model):
     title = models.CharField(verbose_name="Título", max_length=200)
     content = models.TextField(verbose_name="Contenido")
@@ -18,3 +19,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+@receiver(post_delete, sender=Post)
+def delete_post_image(sender, instance, **kwargs):
+    # Borra la imagen asociada al post al eliminar el post
+    if instance.image:
+        if os.path.isfile(instance.image.path):
+            os.remove(instance.image.path)

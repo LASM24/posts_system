@@ -1,0 +1,31 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% block title %}Registro{%endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static "registration/signup.css" %}">
+<style>
+  .errorlist {
+    color: red;
+  }
+  label {
+    display: none;
+  }
+</style>
+<main class="main">
+  <div class="container">
+    <form action="" method="post">
+      {% csrf_token %}
+      <h3 class="mb-4">Registro</h3>
+      {{ form.as_p }}
+      <p>
+        <input
+          type="submit"
+          value="Registrarse"
+        />
+      </p>
+    </form>
+    <p class="link-reg">si ya tienes cuenta, <a href="{% url "login" %}">inicia seccion aquí</a></p>
+  </div>
+</main>
+{% endblock %}
