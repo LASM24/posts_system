@@ -7,6 +7,7 @@ body {
 main{
     display: flex;
     justify-content: center;
+    max-width: 100%;
 }
 
 form {
@@ -20,18 +21,26 @@ form {
 }
 
 h3{
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     text-align: center;
 }
 
-input[type="text"],
-input[type="password"] {
+.form-us,
+.form-pass {
     width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+}
+
+.ps1{
+    margin-top: 1rem;
+}
+
+.ps2{
+    margin-top: 1rem;
 }
 
 input[type="submit"] {
@@ -42,12 +51,16 @@ input[type="submit"] {
     background-color: #007bff;
     color: #fff;
     cursor: pointer;
+    margin-top: 0.5rem;
 }
 
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
+li {
+    list-style: none;
+}
 
 .link-reg{
     margin-top: 2rem;

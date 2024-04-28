@@ -5,6 +5,9 @@
 <link rel="stylesheet" href="{% static "registration/login.css" %}">
 <main>
     <div class="content">
+      {% if 'register' in request.GET %}
+      <p style="color:green; text-align:center;">Usuario registrado correctamente. Ahora puedes ingresar</p>
+      {% endif %}
       <form action="" method="post">{% csrf_token %}
         <h3>Iniciar sesión</h3>
         {% if form.non_field_errors %}
@@ -14,6 +17,7 @@
         <input type="password" name="password" required placeholder="Contraseña"/>
         <input type="submit" value="Acceder">
       </form>
+      <p class="link-reg">si aún no tienes cuenta, <a href="{% url "signup" %}">registrate aquí</a></p>
     </div>
 </main>
 {% endblock %}
